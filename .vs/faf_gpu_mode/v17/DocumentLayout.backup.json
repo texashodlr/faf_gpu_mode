@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\identity_cuda\\submission.cu||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:identity_cuda\\submission.cu||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\cudaQuery.cu||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cudaQuery.cu||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\task.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:example_identity_cuda\\task.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\submission.cu||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:example_identity_cuda\\submission.cu||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:example_identity_cuda\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\reference.cuh||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:example_identity_cuda\\reference.cuh||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cudaQuery.cu",
+              "DocumentMoniker": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\cudaQuery.cu",
+              "RelativeDocumentMoniker": "cudaQuery.cu",
+              "ToolTip": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\cudaQuery.cu",
+              "RelativeToolTip": "cudaQuery.cu",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-04T04:44:16.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "submission.cu",
+              "DocumentMoniker": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\identity_cuda\\submission.cu",
+              "RelativeDocumentMoniker": "identity_cuda\\submission.cu",
+              "ToolTip": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\identity_cuda\\submission.cu",
+              "RelativeToolTip": "identity_cuda\\submission.cu",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAgwFAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-04T04:19:44.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "utils.h",
+              "DocumentMoniker": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\utils.h",
+              "RelativeDocumentMoniker": "example_identity_cuda\\utils.h",
+              "ToolTip": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\utils.h",
+              "RelativeToolTip": "example_identity_cuda\\utils.h",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-04T04:04:54.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "reference.cuh",
+              "DocumentMoniker": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\reference.cuh",
+              "RelativeDocumentMoniker": "example_identity_cuda\\reference.cuh",
+              "ToolTip": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\reference.cuh",
+              "RelativeToolTip": "example_identity_cuda\\reference.cuh",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-04T03:47:27.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "task.h",
+              "DocumentMoniker": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\task.h",
+              "RelativeDocumentMoniker": "example_identity_cuda\\task.h",
+              "ToolTip": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\task.h",
+              "RelativeToolTip": "example_identity_cuda\\task.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-04T03:46:41.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "submission.cu",
+              "DocumentMoniker": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\submission.cu",
+              "RelativeDocumentMoniker": "example_identity_cuda\\submission.cu",
+              "ToolTip": "C:\\Users\\conor\\source\\repos\\texashodlr\\faf_gpu_mode\\example_identity_cuda\\submission.cu",
+              "RelativeToolTip": "example_identity_cuda\\submission.cu",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-04T03:43:56.305Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
