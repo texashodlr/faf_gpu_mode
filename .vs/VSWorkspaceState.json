@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PrefixSum"
   ],
-  "SelectedNode": "\\cudaQuery.cu",
+  "SelectedNode": "\\PrefixSum\\prefixsum.cu",
   "PreviewInSolutionExplorer": false
 }
