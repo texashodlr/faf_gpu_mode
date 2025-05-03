@@ -10,7 +10,7 @@
 #include <iostream>
 #include <cuda.h>
 
-__global__ void parallel_scan(int* g_odata, int* g_idata, int n)
+__global__ void parallel_scan(int* out, int* in, int n)
 {
 	extern __shared__ int temp[1024]; // allocated on invocation
 	int tidx = threadIdx.x;
@@ -64,15 +64,6 @@ int main() {
 	int out[n], in[n];
 
 	sequential_scan(out, in, n);
-
-	int* gpu_out, * gpu_in;
-	cudaMallocManaged(&gpu_out, n * sizeof(int));
-	cudaMallocManaged(&gpu_in, n * sizeof(int));
-
-	for (int i = 0; i < n;i++) {
-		gpu_out[i] = 0;
-		gpu_in[i] = rand() % 100;
-	}
 
 	const int bytes = n * sizeof(int);
 
