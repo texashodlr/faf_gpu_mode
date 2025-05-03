@@ -8,28 +8,37 @@
 #include <array>
 #include <random>
 #include <iostream>
+#include <cuda.h>
 
 __global__ void parallel_scan(int* g_odata, int* g_idata, int n)
 {
-	extern __shared__ int temp[]; // allocated on invocation
-	int thid = threadIdx.x;
-	int pout = 0, pin = 1;
+	extern __shared__ int temp[1024]; // allocated on invocation
+	int tidx = threadIdx.x;
+	int idx = blockIdx.x * blockDim.x + tidx;
 	// Load input into shared memory.
 	// This is exclusive scan, so shift right by one
 	// and set first element to 0
-	temp[pout * n + thid] = (thid > 0) ? g_idata[thid - 1] : 0;
+	if (idx < n) {
+		temp[tidx] = in[idx];
+	}
+	else {
+		temp[tidx] = 0;
+	}
 	__syncthreads();
-	for (int offset = 1; offset < n; offset *= 2)
-	{
-		pout = 1 - pout; // swap double buffer indices
-		pin = 1 - pout;
-		if (thid > = offset)
-			temp[pout * n + thid] += temp[pin * n + thid - offset];
-		else
-			temp[pout * n + thid] = temp[pin * n + thid];
+
+	for (int offset = 1; offset < blockDim.x; offset *= 2) {
+		int val = 0;
+		if (tidx >= offset) {
+			val = temp[tidx - offset];
+		}
+		__syncthreads();
+
+		temp[tidx] += val;
 		__syncthreads();
 	}
-	g_odata[thid] = temp[pout * n + thid]; // write output
+	if (idx < n) {
+		out[idx] = temp[tidx];
+	}
 }
 
 
@@ -65,19 +74,37 @@ int main() {
 		gpu_in[i] = rand() % 100;
 	}
 
-	int blockSize = 256;
-	int gridSize = (n + blockSize - 1) / blockSize;
-	parallel_scan << <gridSize, blockSize >> > (gpu_out, gpu_in, n);
+	const int bytes = n * sizeof(int);
+
+	int* h_in = (int*)malloc(bytes);
+	int* h_out = (int*)malloc(bytes);
+	for (int i = 0; i < n; i++) {
+		h_in[i] = 1;
+	}
+
+	int* d_in, * d_out;
+	cudaMalloc(&d_in, bytes);
+	cudaMalloc(&d_out, bytes);
+	
+	cudaMemcpy(d_in, h_in, bytes, cudaMemcpyHostToDevice);
+
+	int threads = 1024;
+	int blocks = (n + threads - 1) / threads;
+	parallel_scan << <blocks, threads>> > (d_out, d_in, n);
 
 	cudaDeviceSynchronize();
+
+	cudaMemcpy(h_out, d_out, bytes, cudaMemcpyDeviceToHost);
 	
 	for (int i = 0; i < n;i++) {
-		printf("I: %d, Out: %d", i, gpu_out[i]);
+		printf("I: %d, Out: %d", i, h_out[i]);
 		
 	}
 
-	cudaFree(gpu_out);
-	cudaFree(gpu_in);
+	cudaFree(d_out);
+	cudaFree(d_in);
+	free(h_out);
+	free(h_in);
 
 	return 0;
 }
