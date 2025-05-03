@@ -69,7 +69,7 @@ __global__ void parallel_scan_v3(int* out, int* in, int n) {
 	temp[ai + bankOffsetA] = in[ai];
 	temp[bi + bankOffsetB] = in[bi];
 
-	for (int d = n >> 1; d > 0; d >> = 1) {
+	for (int d = n >> 1; d > 0; d >>= 1) {
 		__syncthreads();
 		if (tidx < d) {
 
@@ -87,7 +87,7 @@ __global__ void parallel_scan_v3(int* out, int* in, int n) {
 		temp[n - 1 + CONFLICT_FREE_OFFSET(n - 1)] = 0;
 	}
 	for (int d = 1; d < n; d *= 2) {
-		offset >> = 1;
+		offset >>= 1;
 		__syncthreads();
 		if (tidx < d) {
 
@@ -111,7 +111,7 @@ __global__ void parallel_scan_v2(int* out, int* in, int n) {
 	temp[2 * tidx]	   = in[2 * tidx];//Load input into shared memory
 	temp[2 * tidx + 1] = in[2 * tidx + 1];
 
-	for (int d = n >> 1; d > 0; d >> = 1) {
+	for (int d = n >> 1; d > 0; d >>= 1) {
 		__syncthreads();
 		if (tidx < d) {
 
@@ -128,7 +128,7 @@ __global__ void parallel_scan_v2(int* out, int* in, int n) {
 	
 	}
 	for (int d = 1; d < n; d *= 2) {
-		offset >> = 1;
+		offset >>= 1;
 		__syncthreads();
 		if (tidx < d) {
 
