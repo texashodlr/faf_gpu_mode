@@ -9,9 +9,9 @@
 #include <random>
 #include <iostream>
 
-__global__ void parallel_scan(float* g_odata, float* g_idata, int n)
+__global__ void parallel_scan(int* g_odata, int* g_idata, int n)
 {
-	extern __shared__ float temp[]; // allocated on invocation
+	extern __shared__ int temp[]; // allocated on invocation
 	int thid = threadIdx.x;
 	int pout = 0, pin = 1;
 	// Load input into shared memory.
