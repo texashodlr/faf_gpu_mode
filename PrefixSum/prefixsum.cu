@@ -37,16 +37,16 @@ __global__ void parallel_scan(float* g_odata, float* g_idata, int n)
 
 */
 
-int sequential_scan(int* g_odata, int* g_idata, int n) {
+int sequential_scan(int* out, int* in, int n) {
 	memset(in, 1, sizeof(in));
 	memset(out, 0, sizeof(out));
 
-	for (int i = 0; i < k;i++) {
+	for (int i = 0; i < n;i++) {
 		in[i] = rand();
 	}
 	printf("Initialization Complete!\n");
 
-	for (int i = 1; i < k;i++) {
+	for (int i = 1; i < n;i++) {
 		out[i] = out[i - 1] + in[i - 1];
 		printf("i = %d , Out = %d \n", i, out[i]);
 	}
