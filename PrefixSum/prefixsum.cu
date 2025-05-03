@@ -62,8 +62,8 @@ __global__ void parallel_scan_v3(int* out, int* in, int n) {
 	int tidx = threadIdx.x;
 	int offset = 1;
 
-	int ai = thid;
-	int bi = thid + (n / 2);
+	int ai = tidx;
+	int bi = tidx + (n / 2);
 	int bankOffsetA = CONFLICT_FREE_OFFSET(ai);
 	int bankOffsetB = CONFLICT_FREE_OFFSET(bi);
 	temp[ai + bankOffsetA] = in[ai];
@@ -73,8 +73,8 @@ __global__ void parallel_scan_v3(int* out, int* in, int n) {
 		__syncthreads();
 		if (tidx < d) {
 
-			int ai = offset * (2 * thid + 1) - 1;
-			int bi = offset * (2 * thid + 2) - 1;
+			int ai = offset * (2 * tidx + 1) - 1;
+			int bi = offset * (2 * tidx + 2) - 1;
 			ai += CONFLICT_FREE_OFFSET(ai);
 			bi += CONFLICT_FREE_OFFSET(bi);
 			temp[bi] += temp[ai];
@@ -91,8 +91,8 @@ __global__ void parallel_scan_v3(int* out, int* in, int n) {
 		__syncthreads();
 		if (tidx < d) {
 
-			int ai = offset * (2 * thid + 1) - 1;
-			int bi = offset * (2 * thid + 2) - 1;
+			int ai = offset * (2 * tidx + 1) - 1;
+			int bi = offset * (2 * tidx + 2) - 1;
 			int t = temp[ai];
 			temp[ai] = temp[bi];
 			temp[bi] += t;
@@ -115,8 +115,8 @@ __global__ void parallel_scan_v2(int* out, int* in, int n) {
 		__syncthreads();
 		if (tidx < d) {
 
-			int ai = offset * (2 * thid + 1) - 1;
-			int bi = offset * (2 * thid + 2) - 1;
+			int ai = offset * (2 * tidx + 1) - 1;
+			int bi = offset * (2 * tidx + 2) - 1;
 			ai += CONFLICT_FREE_OFFSET(ai);
 			bi += CONFLICT_FREE_OFFSET(bi);
 			temp[bi] += temp[ai];
@@ -132,8 +132,8 @@ __global__ void parallel_scan_v2(int* out, int* in, int n) {
 		__syncthreads();
 		if (tidx < d) {
 
-			int ai = offset * (2 * thid + 1) - 1;
-			int bi = offset * (2 * thid + 2) - 1;
+			int ai = offset * (2 * tidx + 1) - 1;
+			int bi = offset * (2 * tidx + 2) - 1;
 			int t = temp[ai];
 			temp[ai] = temp[bi];
 			temp[bi] += t;
